@@ -32,5 +32,25 @@ Ambas
 # Código para pegar as listas de input
 primeira_lista = [*map(int, input("Digite a sua primeira lista (separando os números por vírgula): ").split(","))]
 segunda_lista = [*map(int, input("Digite a sua segunda lista (separando os números por vírgula): ").split(","))]
-
 # Fazer a partir daqui
+
+maiorPrimeira = primeira_lista[0]
+for item in primeira_lista:
+    if item > maiorPrimeira:
+        maiorPrimeira = item
+
+maiorSegunda = segunda_lista[0]
+for item in segunda_lista:
+    if item > maiorSegunda:
+        maiorSegunda = item
+
+maior = None
+
+if maiorPrimeira > maiorSegunda:
+    maior = "Primeira"
+elif maiorSegunda > maiorPrimeira:
+    maior = "Segunda"
+else:
+    maior = "Ambas"
+
+print(maior)
